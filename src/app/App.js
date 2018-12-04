@@ -1,4 +1,5 @@
 import React from 'react';
+import { storageRead, storageSet, storageRemove } from './util/storage';
 import { fetchArtist } from './api/index';
 import Artist from './components/artist';
 import Message from './components/message';
@@ -19,7 +20,15 @@ export default class App extends React.Component {
     constructor (props) {
         super(props);
 
-        this.state = { ...App.initialState };
+        this.state = storageRead() || { ...App.initialState };
+    }
+
+    componentDidUpdate (prevProps, prevState) {
+        const { artist } = this.state;
+
+        if (artist !== prevState.artist) {
+           artist ? storageSet(this.state) : storageRemove();
+        }
     }
 
     render() {
@@ -28,7 +37,11 @@ export default class App extends React.Component {
         return (
             <div className="App">
                 <div className="App-container">
-                    <Search placeholder="Search for artist" onSearch={ this.onQueryChange.bind(this) } />
+                    <Search
+                        value={ artist && artist.name }
+                        placeholder="Search for artist"
+                        onSearch={ this.onQueryChange.bind(this) }
+                    />
                     {(() => (
                         fetching && <Spinner />
                     ) || (
