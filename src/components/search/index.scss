@@ -1,0 +1,14 @@
+.Search {
+  font-size: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  outline: transparent;
+  border: 1px solid #fff;
+  transition: .3s border-bottom-color;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+  &:active {
+    border-bottom-color: #e14400;
+  }
+}

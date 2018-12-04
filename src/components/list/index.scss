@@ -1,0 +1,12 @@
+.List .List-container {
+  list-style-type: none;
+  padding: 0;
+
+  .List-item {
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+}

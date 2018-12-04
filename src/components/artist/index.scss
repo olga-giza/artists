@@ -1,0 +1,21 @@
+.Artist {
+  .Artist-cover > img {
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .Artist-website > a {
+    text-decoration: none;
+    color: #cd7357;
+    transition: .3s color;
+
+    &:hover {
+      color: #e14400;
+    }
+  }
+
+  & > * {
+    margin-top: 10px;
+  }
+}

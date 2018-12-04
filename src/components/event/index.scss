@@ -1,0 +1,33 @@
+.Event {
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: left;
+
+  span {
+    cursor: default;
+  }
+
+  .Event-name, .Event-time {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .Event-location, .Event-date {
+    font-weight: 500;
+    font-size: 14px;
+    color: #afafaf;
+  }
+
+  .Event-date, .Event-time {
+    text-align: right;
+  }
+
+  .Event-time {
+    color: #5a5a5a;
+  }
+
+  .Event-name {
+    color: #cd7357;
+  }
+}

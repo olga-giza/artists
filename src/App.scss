@@ -1,0 +1,23 @@
+.App {
+  background-color: #313131;
+  display: flex;
+  justify-content: center;
+  color: #313131;
+
+  .App-container {
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+    padding: 20px 50px;
+
+    .App-header {
+      font-size: 40px;
+      line-height: 80px;
+    }
+  }
+}
