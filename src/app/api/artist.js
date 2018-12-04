@@ -1,5 +1,6 @@
 import { fetchData } from './base';
 import fetchEvents from './events';
+import { stringParser } from '../util/string';
 
 /**
  * Maps response to data model.
@@ -21,7 +22,7 @@ const mapResponse = (data) => ({
  */
 export default (artistName, includeEvents = true) => {
     return new Promise((resolve, reject) => {
-        fetchData(`/artists/${artistName}`)
+        fetchData(`/artists/${stringParser(artistName)}`)
             .then((response) => {
                 if (includeEvents) {
                     fetchEvents(artistName)

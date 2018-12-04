@@ -1,4 +1,5 @@
 import { fetchData } from './base';
+import { stringParser } from '../util/string';
 
 /**
  * Maps response to data model.
@@ -19,6 +20,6 @@ const mapResponse = (data) => ({
  * @returns {Promise} Artist's events data request promise.
  */
 export default (artistName) => {
-    return fetchData(`/artists/${artistName}/events`)
+    return fetchData(`/artists/${stringParser(artistName)}/events`)
         .then((response) => response.map(mapResponse))
 }
