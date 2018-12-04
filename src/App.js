@@ -54,7 +54,7 @@ export default class App extends React.Component {
             .then((artist) =>
                 me.setState({ artist, fetching: false }))
             .catch((error) =>
-                me.setState({ ...App.initialState, error }));
+                me.setState({ ...App.initialState, error: error.message }));
     };
 
     /**

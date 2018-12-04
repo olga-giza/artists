@@ -31,7 +31,7 @@ export const fetchData = (url) => {
                if (response && response.data && !response.data.error) {
                    resolve(response.data);
                } else {
-                   reject('Loading data failed.')
+                   reject(new Error('Loading data failed.'))
                }
            })
            .catch((error) => reject(error));
