@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import List from '../list';
 import Event from '../event';
 import './index.scss';
@@ -6,7 +7,7 @@ import './index.scss';
 /**
  * Input component.
  */
-export default (props) => (
+const Artist = (props) => (
     <div className="Artist">
         <div className="Artist-cover">
             <img src={ props.cover } alt={ props.name } />
@@ -29,3 +30,27 @@ export default (props) => (
         </div>
     </div>
 );
+
+Artist.propTypes = {
+
+    /**
+     * Cover image.
+     */
+    cover: PropTypes.string.isRequired,
+
+    /**
+     * Artist name.
+     */
+    name: PropTypes.string.isRequired,
+    /**
+     * Website URL.
+     */
+    url: PropTypes.string.isRequired,
+
+    /**
+     * Events list if any planned.
+     */
+    events: PropTypes.array,
+};
+
+export default Artist

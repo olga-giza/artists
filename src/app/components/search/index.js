@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
 
 /**
  * Search component.
  */
-export default class Search extends React.Component {
+class Search extends React.Component {
     /**
      * @property {number}
      * Submit key code (enter).
@@ -51,3 +52,23 @@ export default class Search extends React.Component {
         )
     }
 }
+
+Search.propTypes = {
+
+    /**
+     * Initial value.
+     */
+    value: PropTypes.string,
+
+    /**
+     * Field placeholder.
+     */
+    placeholder: PropTypes.string,
+
+    /**
+     * Search event handler.
+     */
+    onSearch: PropTypes.func.isRequired,
+};
+
+export default Search;

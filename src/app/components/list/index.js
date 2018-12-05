@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Message from '../message';
 import './index.scss';
 
 /**
  * List component.
  */
-export default (props) => (
+const List = (props) => (
     <div className="List">
         { Array.isArray(props.data) && props.data.length ? (
             <ul className="List-container">
@@ -20,3 +21,22 @@ export default (props) => (
         )}
     </div>
 );
+
+List.propTypes = {
+    /**
+     * Result set to display on list.
+     */
+    data: PropTypes.array,
+
+    /**
+     * Text for empty result set.
+     */
+    emptyText: PropTypes.string.isRequired,
+
+    /**
+     * List item renderer.
+     */
+    itemRenderer: PropTypes.func.isRequired,
+};
+
+export default List;
