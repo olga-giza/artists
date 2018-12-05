@@ -26,9 +26,7 @@ export default class App extends React.Component {
     componentDidUpdate (prevProps, prevState) {
         const { artist } = this.state;
 
-        if (artist !== prevState.artist) {
-           artist ? storageSet(this.state) : storageRemove();
-        }
+       artist ? storageSet(this.state) : storageRemove();
     }
 
     render() {
